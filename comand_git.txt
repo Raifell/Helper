@@ -30,10 +30,20 @@ git branch -d existing_branch_name Удаление ветки
 git branch -D existing_branch_name Принудительное удаление ветки
 
 git remote add awesomeapp https://github.com/someurl.. Добавление удаленного репозитория
+git remote set-url origin https://github.com/user/repo2.git Замена адреса репозитория
 git remote -v Просмотр удаленных репозиториев
 git remote show origin Получение дополнительных сведений об удаленном репозитории
 git push origin main Отправка изменений в УР
 git pull Получение изменений из УР
+git clone https://github.com/someurl.. Загрузка файлов из репозитория
 
 git merge origin Слияние удаленного репозитория с локальным
 git push -u origin new_branch Отправка новой ветки в УР
+
+##################################################################################
+
+git init Создание репозитория
+git status Статус файлов в репозитории
+git add . Добавление файлов в ветку
+git commit -m Коммит изменений в ветке
+git push origin branch отправка ветки в УР
