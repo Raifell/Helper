@@ -1,0 +1,39 @@
+git config --global user.name "Tara Routray" Задает/меняет имя пользователя (commit)
+git config --global user.email "dev@tararoutray.com" Задает/меняет @mail пользователя (commit)
+git config --global credential.helper cache Кеширование учетных данных пользователя
+
+git init Инициализация репозитория
+git add somefile.js Добавление в VHS конкретного файла
+git add . Добавление всех файлов в VHS
+git status Статус репозитория
+git commit -m "Your short summary about the commit" Коммит с флагом -m и коментарием
+
+git commit Коммит через редактор в IDE
+git log -p Просмотр истории коммитов с изменениями
+git show 1af17e73721dbe0c40011b82ed4bb1a7dbe3ce29 Просмотр коммита по полному хешу
+git show 1af17e Просмотр коммита по первому ключу хеша
+git diff Просмотр изменений до коммита
+git diff --staged Просмотр подготовленных изменений через флаг --staged
+
+git diff somefile.js Просмотр изменений в конкретном файле
+git rm dirname/somefile.js Удаление файла из текущего рабочего пространства
+git rm dirname/*.html Удаление всех файлов .html из текущего рабочего пространства
+git mv dir1/somefile.js dir2 Переименование файла
+
+git commit --amend -m "Updated message for the previous commit" Изменение последнего коммита
+git revert HEAD Откат последнего коммита
+git branch new_branch_name Создание новой ветки
+git checkout -b new_branch_name Переход в ветку
+git branch Просмотр веток
+git branch -a Вывести список удаленных веток
+git branch -d existing_branch_name Удаление ветки
+git branch -D existing_branch_name Принудительное удаление ветки
+
+git remote add awesomeapp https://github.com/someurl.. Добавление удаленного репозитория
+git remote -v Просмотр удаленных репозиториев
+git remote show origin Получение дополнительных сведений об удаленном репозитории
+git push origin main Отправка изменений в УР
+git pull Получение изменений из УР
+
+git merge origin Слияние удаленного репозитория с локальным
+git push -u origin new_branch Отправка новой ветки в УР
