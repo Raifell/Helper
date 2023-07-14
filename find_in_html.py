@@ -27,3 +27,4 @@ with open('example.html', 'w') as f:
 with open('example.html', 'r') as f:
     print(*(re.findall(r'(?ms)(?<=<div>).+?(?=</div>)', re.sub(r'\s+', ' ', f.read()))), sep='\n')
 
+print(10)
