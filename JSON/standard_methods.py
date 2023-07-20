@@ -21,7 +21,7 @@ for x in range(len(new_dict_json)): # Выводим информацию из �
     print()
 
 with open('example.json', 'w') as file: # Сохраняем новый список в файл json (json.dump - для записи в файл)
-    json.dump(new_dict_json, file, indent=2)
+    json.dump(new_dict_json, file, indent=2, ensure_ascii=False) # !!!!!!!!!!!! Запрещает кодирование символов при записи
 
 with open('example.json', 'r') as file: # Загрузка из файла (json.load - для загрузкииз файла)
     ax = json.load(file)
