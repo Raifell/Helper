@@ -48,6 +48,11 @@ conn.commit()
 for x in cursor.execute('SELECT * FROM users;'):
     print(x)
 
+# Добавление новой колонки в таблицу
+
+var = 'mail'
+cursor.execute(f"ALTER TABLE users ADD COLUMN {var} 'varchar(50)'")
+
 # Закрытие соединения и курсора, после всех действий
 
 cursor.close()
