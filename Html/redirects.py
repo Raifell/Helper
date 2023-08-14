@@ -2,7 +2,7 @@ import requests
 
 
 def get_file(url):
-    response = requests.get(url=url, allow_redirect=True) # Разрешает изменение ссылки для перехода
+    response = requests.get(url=url, allow_redirects=True) # Разрешает изменение ссылки для перехода
     return response
 
 
