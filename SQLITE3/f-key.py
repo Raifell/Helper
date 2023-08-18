@@ -16,8 +16,8 @@ def connect():
     (ID INTEGER PRIMARY KEY,
     Good TEXT,
     Count INT,
-    CID INT,
-    FOREIGN KEY (CID) REFERENCES CATEGORYS (CID))''')
+    BID INT,
+    FOREIGN KEY (BID) REFERENCES CATEGORYS (CID))''')
     conn.commit()
     conn.close()
 
@@ -34,7 +34,7 @@ def insert():
     t = [('Milk-0', 10,  1), ('Milk-1', 12, 1), ('Meat-0', 5, 2), ('Meat-1', 7,  2), ('Meat-2', 9, 2),
          ('Bread-0', 7, 3), ('Bread-1', 12, 3), ('Bread-2', 10, 3), ('Vegetable-0', 20, 4), ('Vegetable-1', 23, 4),
          ('Fruit-0', 16, 5), ('Fruit-1', 18, 5)]
-    cur.executemany('''INSERT INTO Goods (Good, Count, CID) VALUES (?, ?, ?)''', t)
+    cur.executemany('''INSERT INTO Goods (Good, Count, BID) VALUES (?, ?, ?)''', t)
     conn.commit()
     conn.close()
 
@@ -44,7 +44,7 @@ def select():
     conn.execute("PRAGMA foreign_keys = 1")
     cur = conn.cursor()
 
-    selects = 'SELECT Category, Good, Count FROM Categorys INNER JOIN Goods ON Categorys.CID = Goods.CID'
+    selects = 'SELECT CID, Category, Good, Count FROM Categorys INNER JOIN Goods ON Categorys.CID = Goods.BID'
     cur.execute(selects)
     result = cur.fetchall()
     for x in result:
