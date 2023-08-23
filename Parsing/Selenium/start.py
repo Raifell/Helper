@@ -6,7 +6,7 @@ driver.get('https://jsonplaceholder.typicode.com')
 time.sleep(5)
 driver.quit()
 
-#---[В случае проблем с драйверами - использовать код ниже(Path включен)]---#
+#---[В случае проблем с драйверами - установить модуль [webriver-manager] использовать код ниже(Path включен)]---#
 
 from selenium import webdriver
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
