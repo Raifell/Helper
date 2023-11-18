@@ -30,3 +30,10 @@ TEMPLATES = [
         },
     },
 ]
+
+# html
+
+{% load tag_name %}
+{% tag_fn as var_name %}
+{% for i in var_name %}
+{% endfor %}
