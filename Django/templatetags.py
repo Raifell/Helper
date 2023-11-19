@@ -1,4 +1,5 @@
 # temlatetags/tag_name
+# simple_tag
 
 from django import template
 from main.models import Category
@@ -36,4 +37,26 @@ TEMPLATES = [
 {% load tag_name %} # {% load name.name-decorator %}
 {% tag_fn as var_name %}
 {% for i in var_name %}
+{% endfor %}
+
+
+# inclusion_tag
+
+@register.inclusion_tag('template.file')
+def show_genres():
+    categorys = Category.objects.all()
+    return {"categorys": categorys}
+
+# in layout.file =>
+
+{% load tag_name %}
+
+# in template.file =>
+
+{% for category in categorys %}
+    {% if select_url == category.pk %}
+        <li>{{ category.name }}</li>
+    {% else %}
+        <li><a href="{{ genre.get_absolute_url }}">{{ category.name }}</a></li>
+    {% endif %}
 {% endfor %}
