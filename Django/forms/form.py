@@ -42,6 +42,7 @@ def add_page(request):
         <div style="color: red;">{{ form.non_field_errors }}</div>
         {% for f in form %}
             <p style="display: flex; gap: 20px;"><label>{{ f.label }}</label>{{ f }}</p>
+            <div style="color: red">{{ f.errors }}</div>
         {% endfor %}
         <button type="submit">Add</button>
     </form>
