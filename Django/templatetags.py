@@ -8,8 +8,11 @@ register = template.Library()
 
 
 @register.simple_tag() # @register.simple_tag(name='getcats)
-def get_category():
-    return Category.objects.all()
+def get_category(filter=None):
+    if not filter:
+        return Category.objects.all()
+    else:
+        return Category.objects.filter(pk=filter)
 
 # settings
 
