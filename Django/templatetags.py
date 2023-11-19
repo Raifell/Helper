@@ -6,7 +6,7 @@ from main.models import Category
 register = template.Library()
 
 
-@register.simple_tag()
+@register.simple_tag() # @register.simple_tag(name='getcats)
 def get_category():
     return Category.objects.all()
 
@@ -33,7 +33,7 @@ TEMPLATES = [
 
 # html
 
-{% load tag_name %}
+{% load tag_name %} # {% load name.name-decorator %}
 {% tag_fn as var_name %}
 {% for i in var_name %}
 {% endfor %}
